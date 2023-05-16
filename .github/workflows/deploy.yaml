@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+  
+env:
+  PROJECT_ID: ${{ secrets.GCR_PROJECT }}
+  RUN_REGION: asia-east1
+  SERVICE_NAME: shopping-cart-backend
+
 jobs:
   build:
     name: GAE Deploy
@@ -12,3 +18,8 @@ jobs:
       - uses: google-github-actions/deploy-appengine@main
         with:
           credentials: ${{ secrets.gcp_credentials }}
+          project_id: $PROJECT_ID
+          export_default_credentials: true
+          version: "318.0.0"
+        
+ 
