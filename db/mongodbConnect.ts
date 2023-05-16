@@ -9,4 +9,5 @@ export async function mongodb() {
     } catch (error) {
       throw new Error('database connection error');
     }
-  }
+}
+  
