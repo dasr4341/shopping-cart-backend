@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "rimraf ./.docker/dist && tsc",
-    "start:pm2": "node ./.docker/dist/server.js",
-    "dev": "nodemon server.ts",
+    "start:pm2": "node ./.docker/dist/index.js",
+    "dev": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
