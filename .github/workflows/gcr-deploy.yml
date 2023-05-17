@@ -5,7 +5,7 @@ on:
       - main
   
 env:
-  PROJECT_ID: ${{ secrets.GCR_PROJECT }}
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   RUN_REGION: asia-east1
   SERVICE_NAME: shopping-cart-backend
 
