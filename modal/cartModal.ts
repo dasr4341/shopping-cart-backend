@@ -21,3 +21,6 @@ const cartSchema: Schema = new Schema({
 export function cartModelGenerator() {
   return mongoose.model<CartInterface>("cart", cartSchema);
 }
+
+
+
