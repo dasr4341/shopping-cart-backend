@@ -1,4 +1,4 @@
-name: CICD for Youtube
+name: CICD 
 
 on:
   push:
