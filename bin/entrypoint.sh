@@ -1,3 +1,4 @@
 #!/bin/sh
-npm run start:prod
+npm run build
+npm run start
 
