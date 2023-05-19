@@ -10,8 +10,6 @@ services:
     - mongo_db
     environment:
       - DB_URI=mongodb://root:testpassword@mongo_db:27017 
-      - DB_USERNAME=user
-      - DB_PASSWORD=dbpassword
     volumes:
         - "./:/home/app"
   mongo_db:

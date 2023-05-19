@@ -12,6 +12,7 @@ RUN mkdir /home/app
 WORKDIR /app
 COPY . /app/
 RUN npm i
+
 EXPOSE 3011
 RUN chmod 755 bin/entrypoint.sh
 CMD bin/entrypoint.sh
