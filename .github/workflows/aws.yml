@@ -40,8 +40,10 @@ jobs:
           key:  ${{ secrets.KEY }}
           port:  ${{ secrets.PORT }}
           script: |
-
+              
                cd ~/cicd
+               apt-get update
+               apt-get install docker.io
                git pull origin main
                docker-compose up --build --force-recreate  
                pm2 restart api
