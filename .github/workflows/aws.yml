@@ -1,4 +1,4 @@
-name: CICD for Youtube
+name: CICD 
 
 on:
   push:
@@ -40,9 +40,9 @@ jobs:
           key:  ${{ secrets.KEY }}
           port:  ${{ secrets.PORT }}
           script: |
-              
-               sudo apt-get update
+            
                sudo apt-get install docker.io
+               sudo apt-get update
                git pull origin main
                docker-compose up --build --force-recreate  
                pm2 restart api
