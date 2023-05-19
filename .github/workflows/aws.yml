@@ -41,9 +41,8 @@ jobs:
           port:  ${{ secrets.PORT }}
           script: |
               
-               cd ~/cicd
-               apt-get update
-               apt-get install docker.io
+               sudo apt-get update
+               sudo apt-get install docker.io
                git pull origin main
                docker-compose up --build --force-recreate  
                pm2 restart api
