@@ -5,13 +5,15 @@ services:
     build: 
       context: ./
     ports:
-      - "8000:5000"
+      - "8000:3011"
     depends_on: 
     - mongo_db
     environment:
       - DB_URI=mongodb://root:testpassword@mongo_db:27017 
       - DB_USERNAME=user
       - DB_PASSWORD=dbpassword
+    volumes:
+        - "./:/home/app"
   mongo_db:
     ports:
       - 27017:27017
@@ -26,3 +28,5 @@ services:
     volumes:
       - ./mongo_db:/data/db
     
+# docker-compose up --build --force-recreate  
+# docker-compose up
