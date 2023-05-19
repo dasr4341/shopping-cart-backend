@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:prod": "pm2 start ./server.ts --interpreter none -f",
+    "start:prod": "npm run build && pm2 start ./build/index.js --interpreter none -f",
     "build": "rimraf ./build && tsc",
-    "start": "node ./build/index.js",
+    "start": "node ./index.js",
     "start:build": "npm run build && node ./build/index.js",
     "dev": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

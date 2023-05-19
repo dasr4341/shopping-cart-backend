@@ -3,7 +3,7 @@ name: CICD for Youtube
 on:
   push:
     branches:
-        - github-actions-aws
+        - docker-compose
 
 jobs:
   build:
@@ -40,15 +40,10 @@ jobs:
           key:  ${{ secrets.KEY }}
           port:  ${{ secrets.PORT }}
           script: |
-              curl -o-   https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh    | bash
-              . ~/.nvm/nvm.sh
 
-               nvm instal 18
-               npm install -g pm2
-               cd ~/CICD
+               cd ~/cicd
                git pull origin main
-               npm install
-               npm run build
+               docker-compose up --build --force-recreate  
                pm2 restart api
             
 
